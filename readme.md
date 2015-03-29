@@ -1,8 +1,8 @@
 #Install
 
 ```bash
-git clone git://github.com/javierchavez/dotfiles.git
-cd ~/dotfiles
+git clone git://github.com/javierchavez/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 chmod +x install.sh
 ./install.sh
 ```
