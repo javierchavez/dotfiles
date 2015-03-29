@@ -1,0 +1,16 @@
+emacs
+gdal
+git
+git-flow
+gradle
+imagemagick
+little-cms2
+maven
+mysql
+node
+postgresql
+postgresql92
+ssh-copy-id
+tmux
+webp
+wget
