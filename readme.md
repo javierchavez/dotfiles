@@ -1,7 +1,7 @@
 to install
 
 	
-	chmod 755 install.sh
+	chmod +x install.sh
 	install.sh
 
 
