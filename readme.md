@@ -76,9 +76,9 @@ while read line; do echo "(require-package '${line}) (provide 'init-${line})"> "
 
 **This needs to be refactored into a actual script** 
 
-*	Needs to check if file exists
-*	If it does then skip
-*	If not then make file with contents
+- [ ]	Script to generate already populated files
+- [ ]	Script to add/remove packages 
+- [ ]	install.sh that encompasses everything 
 
 
 Each file contains cofig for givin package.
@@ -94,6 +94,7 @@ install it.
 
 
 **Credits**
+---
 
 I got the function `(require-package 'pkg)`
 [here](https://github.com/javierchavez/dotfiles/blob/master/emacs.d/packages/init-main.el#L11)
