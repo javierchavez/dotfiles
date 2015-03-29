@@ -29,6 +29,14 @@ Make sure you set location in `packages/init-virtualenvwrapper.el`
 (setq venv-location "/Users/javierc/Documents/virtualenvs/")
 ```
 
+###A few of my favorites
+* smart-tab (autocomplete)
+* multiple-cursors (C-c C-l like sublime)
+* shell (C-x C-u)
+* monoaki-theme
+* kill-buffer-and-window (C-x C-k)
+
+
 #About bash
 I am using bashrc as main so that emacs references it in shell.
 
@@ -51,14 +59,6 @@ installing.
 * webp
 * wget 
 
-
-
-###A few of my favorites
-* smart-tab (autocomplete)
-* multiple-cursors (C-c C-l like sublime)
-* shell (C-x C-u)
-* monoaki-theme
-* kill-buffer-and-window (C-x C-k)
 
 #etc
 Here are some other notes about the dotfiles.
@@ -91,6 +91,20 @@ Simply over time configuring emacs.
 ###What is `init.el`
 I am requiring all the packages if the package is not installed then I
 install it.
+
+
+**Credits**
+
+I got the function `(require-package 'pkg)`
+[here](https://github.com/javierchavez/dotfiles/blob/master/emacs.d/packages/init-main.el#L11)
+from [@Nuk9](https://github.com/Nuk9)
+
+
+`install.sh` is from [github](http://dotfiles.github.io)
+
+
+`osx.sh` hotcorners from
+[@holman](https://github.com/holman/dotfiles)!
 
 
 
