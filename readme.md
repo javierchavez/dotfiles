@@ -52,9 +52,9 @@ installing.
 
 ```bash
 brew install emacs --coca
-ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications
+ln -s /usr/local/Cellar/emacs/{build}/Emacs.app /Applications
 # override system default emacs
-alias emacs="/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs -nw"
+alias emacs="/usr/local/Cellar/emacs/{build}/Emacs.app/Contents/MacOS/Emacs -nw"
 ```
 
 * Applications

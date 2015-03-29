@@ -13,7 +13,6 @@ fi
 
 # Path
 export ANDROID_HOME="$HOME/Documents/android-sdks"
-emacs="/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs -nw"
 export PYS=Library/Python/2.7/bin
 export PATH=/Library/Frameworks/UnixImageIO.framework/Programs:$PATH
 export PATH=/Library/Frameworks/PROJ.framework/Programs:$PATH
@@ -188,6 +187,7 @@ alias jac='ssh javierac@javierachavez.com'
 alias msql-start='mysql.server start'
 alias msql-stop='mysql.server stop'
 alias fucking='sudo'
+alias emacs="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs -nw"
 alias vi=emacs
 alias vim=emacs
 
