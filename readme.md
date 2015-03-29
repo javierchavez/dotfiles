@@ -1,36 +1,42 @@
 #Install
-	
-	chmod +x install.sh
-	install.sh
 
+```bash
+git clone git://github.com/javierchavez/dotfiles.git
+cd ~/dotfiles
+chmod +x install.sh
+./install.sh
+```
+
+Once ran your old files will be in `~/dotfiles_old`
 
 #About emacs
-I would suggest *brew install emacs*.
-1. Then run.
-2. Wait until install is complete
-3. Close and reopen.
+
+1.    Open emacs.
+2.    Wait until install is complete
+3.    Close and reopen.
 
 You can easily delete packages you dont want loaded... just delete the
 require in `emacs/init.el` e.g. delete (require
 'init-virtualenvwrapper) if you dont want it.
 
 Make sure you set location in `packages/init-virtualenvwrapper.el`
-`
-    (setq venv-location "/Users/javierc/Documents/virtualenvs/")
-`
+```lisp
+(setq venv-location "/Users/javierc/Documents/virtualenvs/")
+```
 
 #About bash
 I am using bashrc as main so that emacs references it in shell.
 
 Make sure you set
-`
-    ANDROID_HOME
-`
+```bash
+ANDROID_HOME
+```
 
 #Brew
 Brew will be installed if you dont have it. **Strongly** recommend
 installing.
 
+* emacs (if your are not using emacs app.)
 * git
 * git-flow
 * gradle
@@ -58,8 +64,9 @@ saved it to emacs_packages.txt.
 
 Then while inside of the packages dir I ran...
 
-    while read line; do echo "(require-package '${line}) (provide 'init-${line})"> "init-${line}.el" ; done < ../emacs_packages.txt
-
+```bash
+while read line; do echo "(require-package '${line}) (provide 'init-${line})"> "init-${line}.el" ; done < ../emacs_packages.txt
+```
 
 **This needs to be refactored into a actual script** 
 
@@ -78,6 +85,7 @@ Simply over time configuring emacs.
 ###What is `init.el`
 I am requiring all the packages if the package is not installed then I
 install it.
+
 
 
 
