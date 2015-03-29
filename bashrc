@@ -13,6 +13,7 @@ fi
 
 # Path
 export ANDROID_HOME="$HOME/Documents/android-sdks"
+emacs="/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs -nw"
 export PYS=Library/Python/2.7/bin
 export PATH=/Library/Frameworks/UnixImageIO.framework/Programs:$PATH
 export PATH=/Library/Frameworks/PROJ.framework/Programs:$PATH

@@ -14,7 +14,7 @@ chmod +x osx.sh
 
 Once ran your old files will be in `~/dotfiles_old`
 
-#About emacs
+#Set up emacs
 
 1.    Open emacs.
 2.    Wait until install is complete
@@ -29,7 +29,7 @@ Make sure you set location in `packages/init-virtualenvwrapper.el`
 (setq venv-location "/Users/javierc/Documents/virtualenvs/")
 ```
 
-###A few of my favorites
+######Noteable features
 * smart-tab (autocomplete)
 * multiple-cursors (C-c C-l like sublime)
 * shell (C-x C-u)
@@ -50,8 +50,14 @@ ANDROID_HOME
 Brew will be installed if you dont have it. **Strongly** recommend
 installing.
 
-* emacs (if your are not using emacs app.)
-* git
+```bash
+brew install emacs --coca
+ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications
+# override system default emacs
+alias emacs="/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs -nw"
+```
+
+* Applications
 * git-flow
 * gradle
 * maven
