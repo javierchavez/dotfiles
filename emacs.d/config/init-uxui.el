@@ -31,7 +31,8 @@
 
 
 
-(setq visible-bell t
+(setq visible-bell nil
+      ring-bell-function 'ignore
       inhibit-splash-screen t
       inhibit-startup-message t
       initial-scratch-message nil)
