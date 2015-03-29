@@ -4,8 +4,13 @@
 git clone git://github.com/javierchavez/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 chmod +x install.sh
+chmod +x osx.sh
 ./install.sh
+./osx.sh
 ```
+
+**Restart Terminal**
+
 
 Once ran your old files will be in `~/dotfiles_old`
 
@@ -27,7 +32,8 @@ Make sure you set location in `packages/init-virtualenvwrapper.el`
 #About bash
 I am using bashrc as main so that emacs references it in shell.
 
-Make sure you set
+Make sure you set or delete `PATH`s that are giving you trouble
+e.g.
 ```bash
 ANDROID_HOME
 ```
