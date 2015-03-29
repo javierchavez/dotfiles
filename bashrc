@@ -14,7 +14,6 @@ fi
 # Path
 export ANDROID_HOME="$HOME/Documents/android-sdks"
 export PYS=Library/Python/2.7/bin
-export IM=/usr/lib/imagemagic/
 export PATH=/Library/Frameworks/UnixImageIO.framework/Programs:$PATH
 export PATH=/Library/Frameworks/PROJ.framework/Programs:$PATH
 export PATH=/Library/Frameworks/GEOS.framework/Programs:$PATH
@@ -183,9 +182,6 @@ PROMPT_COMMAND=prompt_command
 #                                      #
 ########################################
 alias hidden="ls -a | grep '^\.'"
-alias ll='ls -la'
-alias md='open /Applications/Mou.app'
-alias tree='python /Users/javierAle/Public/tree.py'
 alias unm='ssh javierc@moons.cs.unm.edu'
 alias jac='ssh javierac@javierachavez.com'
 alias msql-start='mysql.server start'
