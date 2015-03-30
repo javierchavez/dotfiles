@@ -12,6 +12,7 @@ fi
 
 
 # Path
+export PYTHONSTARTUP="$HOME/.pythonrc"
 export ANDROID_HOME="$HOME/Documents/android-sdks"
 export PYS=Library/Python/2.7/bin
 export PATH=/Library/Frameworks/UnixImageIO.framework/Programs:$PATH
@@ -19,7 +20,6 @@ export PATH=/Library/Frameworks/PROJ.framework/Programs:$PATH
 export PATH=/Library/Frameworks/GEOS.framework/Programs:$PATH
 export PATH=/Library/Frameworks/SQLite3.framework/Programs:$PATH
 export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
-export PATH=/Library/Racket/bin:$PATH
 export PATH="$HOME/Library/Haskell/bin:$PATH:$ANDROID_HOME"
 export JAVA_HOME=$(/usr/libexec/java_home)
 export DJANGO_AUTO_COMPLETE='True'

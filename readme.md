@@ -57,13 +57,21 @@ ln -s /usr/local/Cellar/emacs/{build}/Emacs.app /Applications
 alias emacs="/usr/local/Cellar/emacs/{build}/Emacs.app/Contents/MacOS/Emacs -nw"
 ```
 
-* Applications
-* git-flow
-* gradle
-* maven
-* ssh-copy-id
-* webp
-* wget 
+and...
+
+```bash
+brew install git bash-completion`
+```
+
+######Scheme/Haskell
+
+* `brew cask install racket`
+* `brew cask install haskell-platform`
+
+######Other
+
+`brew install gradle maven ssh-copy-id webp wget`
+
 
 
 #etc
@@ -107,11 +115,12 @@ I got the function `(require-package 'pkg)`
 from [@Nuk9](https://github.com/Nuk9)
 
 
-`install.sh` is from [github](http://dotfiles.github.io)
+`install.sh` and `pythonrc` is from [github](http://dotfiles.github.io)
 
 
 `osx.sh` hotcorners from
 [@holman](https://github.com/holman/dotfiles)!
+
 
 
 

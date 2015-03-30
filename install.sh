@@ -8,7 +8,7 @@
 
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bash_profile bashrc emacs.d gitconfig gitignore"    # list of files/folders to symlink in homedir
+files="bash_profile bashrc emacs.d gitconfig gitignore pythonrc"    # list of files/folders to symlink in homedir
 
 
 ##########
@@ -18,6 +18,8 @@ if test ! $(which brew)
 then
   echo "  Installing Homebrew for you."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo " Installing Cask for you."
+  brew install caskroom/cask/brew-cask
 fi
 
 # Install homebrew packages
@@ -34,6 +36,8 @@ echo "...done"
 echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
+
+
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
