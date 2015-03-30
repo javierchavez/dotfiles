@@ -36,15 +36,17 @@
       inhibit-splash-screen t
       inhibit-startup-message t
       initial-scratch-message nil)
+
 ;; use Shift+arrow_keys to move cursor around split panes
 (windmove-default-keybindings)
+
+;; only show linum when programming
 (add-hook 'prog-mode-hook 'linum-mode)
 (setq linum-format "%3d ")
+
 (scroll-bar-mode -1)
 
 (add-hook 'shell-mode-hook 'buffer-disable-undo t)
-
-
 
 ;; Enable y/n answers.
 (fset 'yes-or-no-p 'y-or-n-p)
