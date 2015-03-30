@@ -52,7 +52,7 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;; scheme ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq scheme-program-name "/Library/Racket/bin/racket") 
+(setq scheme-program-name "racket") 
 
 
 ;;;;; REMOTE cs
