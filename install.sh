@@ -49,6 +49,6 @@ done
 
 echo "Creating history files for python."
 mkdir $dir/.history
-# touch $dir/.history/python
+touch $dir/.history/python
 
 
