@@ -14,7 +14,7 @@ fi
 # Path
 export PYTHONSTARTUP="$HOME/.pythonrc"
 export ANDROID_HOME="$HOME/Documents/android-sdks"
-export PYS=Library/Python/2.7/bin
+# export PYS=Library/Python/2.7/bin
 export PATH=/Library/Frameworks/UnixImageIO.framework/Programs:$PATH
 export PATH=/Library/Frameworks/PROJ.framework/Programs:$PATH
 export PATH=/Library/Frameworks/GEOS.framework/Programs:$PATH

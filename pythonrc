@@ -24,6 +24,8 @@ readline library[1], or you can use a different Python distribution
 
 [1]: http://pypi.python.org/pypi/readline
 """
+
+
 def _pythonrc_enable_readline():
     """Enable readline, tab completion, and history"""
     import sys
@@ -45,6 +47,7 @@ def _pythonrc_enable_readline():
             return old_complete(text, state)
     readline.parse_and_bind('tab: complete')
     readline.set_completer(complete)
+
 
 def _pythonrc_enable_history():
     import atexit
@@ -70,6 +73,7 @@ def _pythonrc_enable_history():
         if os.path.isfile(history_path):
             readline.read_history_file(history_path)
         readline.set_history_length(-1)
+
 
 def _pythonrc_enable_pprint():
     """Enable pretty printing of evaluated expressions"""
@@ -194,6 +198,7 @@ def _pythonrc_enable_pprint():
             pphighlight(value, width=get_width() or 80)
 
     sys.displayhook = pprinthook
+
 
 def _pythonrc_fix_linecache():
     """Add source(obj) that shows the source code for a given object"""
@@ -367,6 +372,3 @@ if __name__ == '__main__':
             del cwd
     finally:
         pass
-    
-    
-
