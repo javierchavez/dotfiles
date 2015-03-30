@@ -62,5 +62,8 @@
 
 
 
+(defun open-finder ()
+  (interactive)
+  (shell-command "open ."))
 
 
