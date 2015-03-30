@@ -60,7 +60,7 @@ alias emacs="/usr/local/Cellar/emacs/{build}/Emacs.app/Contents/MacOS/Emacs -nw"
 and...
 
 ```bash
-brew install git bash-completion`
+brew install git bash-completion
 ```
 
 ######Scheme/Haskell
