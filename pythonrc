@@ -57,10 +57,14 @@ def _pythonrc_enable_history():
     except:
         return
 
-    # "NOHIST= python" will disable history
-    if 'NOHIST' not in os.environ:
-        history_path = os.path.expanduser('~/.history/python')
 
+    history_path = os.path.expanduser('~/.history/python')
+    if not os.path.isfile(history_path):
+        print('History disabled, could not find "%s"' % history_path)
+        return
+    
+    # "NOHIST= python" will disable history    
+    if 'NOHIST' not in os.environ:
         has_written = [False]
 
         def write_history():
@@ -68,15 +72,16 @@ def _pythonrc_enable_history():
                 readline.write_history_file(history_path)
                 print('Written history to %s' % history_path)
                 has_written[0] = True
+
         atexit.register(write_history)
 
-        if os.path.isfile(history_path):
-            try:
-                readline.read_history_file(history_path)
-            except IOError:
-                pass
-        readline.set_history_length(3000)
+        try:
+            readline.read_history_file(history_path)
+        except IOError:
+            pass
 
+        readline.set_history_length(3000)
+    
 
 def _pythonrc_enable_pprint():
     """Enable pretty printing of evaluated expressions"""
