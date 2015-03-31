@@ -72,6 +72,11 @@ brew install git bash-completion
 
 `brew install gradle maven ssh-copy-id webp wget`
 
+#python
+I include a pythonrc and pylintrc file for a better python experience.
+
+######pythonrc
+Call `source(object)` to get the source/more info about the object
 
 
 #etc

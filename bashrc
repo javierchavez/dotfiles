@@ -3,9 +3,9 @@ then
     source ~/.work_bash
 fi
 
-if [ -f ~/private ];
+if [ -f ~/bash_private ];
 then
-    source ~/private
+    source ~/.bash_private
 fi
 
 
@@ -15,7 +15,6 @@ fi
 export PYTHONSTARTUP="$HOME/.pythonrc"
 export PYLINTRC="$HOME/.pylintrc"
 export ANDROID_HOME="$HOME/Documents/android-sdks"
-# export PYS=Library/Python/2.7/bin
 export PATH=/Library/Frameworks/UnixImageIO.framework/Programs:$PATH
 export PATH=/Library/Frameworks/PROJ.framework/Programs:$PATH
 export PATH=/Library/Frameworks/GEOS.framework/Programs:$PATH
@@ -23,71 +22,57 @@ export PATH=/Library/Frameworks/SQLite3.framework/Programs:$PATH
 export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
 export PATH="$HOME/Library/Haskell/bin:$PATH:$ANDROID_HOME"
 export JAVA_HOME=$(/usr/libexec/java_home)
-export DJANGO_AUTO_COMPLETE='True'
 export TERM=xterm-256color
 
+
+
 ########################################
 #                                      #
-#               minify                 #
+#         Django autocomplete          #
 #                                      #
 ########################################
-minify () {
-    if [ -z "$1" ]; then
-	echo "expecting atleast 1 arg."
-	return 0
+
+
+_django_completion()
+{
+    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
+                   COMP_CWORD=$COMP_CWORD \
+                   DJANGO_AUTO_COMPLETE=1 $1 ) )
+}
+complete -F _django_completion -o default django-admin.py manage.py django-admin
+
+_python_django_completion()
+{
+    if [[ ${COMP_CWORD} -ge 2 ]]; then
+        PYTHON_EXE=${COMP_WORDS[0]##*/}
+        echo $PYTHON_EXE | egrep "python([2-9]\.[0-9])?" >/dev/null 2>&1
+        if [[ $? == 0 ]]; then
+            PYTHON_SCRIPT=${COMP_WORDS[1]##*/}
+            echo $PYTHON_SCRIPT | egrep "manage\.py|django-admin(\.py)?" >/dev/null 2>&1
+            if [[ $? == 0 ]]; then
+                COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]:1}" \
+                               COMP_CWORD=$(( COMP_CWORD-1 )) \
+                               DJANGO_AUTO_COMPLETE=1 ${COMP_WORDS[*]} ) )
+            fi
+        fi
     fi
-    
-    java -jar ~/.emacs.d/yuicompressor-2.4.8.jar --charset utf8 --type js -o $(basename $1 .js).min.js $1
 }
 
 
-########################################
-#                                      #
-#             posterlynx               #
-#                                      #
-########################################
-function posterlynx {
-    export MAIL_DEFAULT_SENDER='posterlynx <admin@javierachavez.com>'
-    export MAIL_SERVER='box884.bluehost.com'
-    export MAIL_PORT='465'
-    export MAIL_USE_SSL='1'
-    export MAIL_USE_TLS='0'
+# Support for multiple interpreters.
+unset pythons
+if command -v whereis &>/dev/null; then
+    python_interpreters=$(whereis python | cut -d " " -f 2-)
+    for python in $python_interpreters; do
+        pythons="${pythons} ${python##*/}"
+    done
+    pythons=$(echo $pythons | tr " " "\n" | sort -u | tr "\n" " ")
+else
+    pythons=python
+fi
 
-    RED="\033[1; 31m"
-    OFF="\033[m"
-    if [ $# -eq 0 ]; then
-	   echo -e "virtual env ${RED}NOT${OFF} activated. \n\nShould be 'posterlynx e' to activate"
-    else
-	   source ~/Documents/virtualenvs/qrwebsite/bin/activate
-    fi
+complete -F _python_django_completion -o default $pythons
 
-    cd ~/Documents/posterlynx
-}
-
-########################################
-#                                      #
-#               TC app                 #
-#                                      #
-########################################
-function tcapp {
-    export MAIL_DEFAULT_SENDER='tc committee <admin@javierachavez.com>'
-    export MAIL_SERVER='box884.bluehost.com'
-    export MAIL_PORT='465'
-    export MAIL_USE_SSL='1'
-    export MAIL_USE_TLS='0'
-
-
-    RED="\033[1; 31m"
-    OFF="\033[m"
-    if [ $# -eq 0 ]; then
-        echo -e "virtual env ${RED}NOT${OFF} activated. \n\nShould be 'run_tc e' to activate"
-    else
-        source ~/Documents/virtualenvs/tc-venv/bin/activate
-    fi
-
-    cd ~/Documents/TC\ app
-    
-}
 
 ########################################
 #                                      #
@@ -141,6 +126,7 @@ function prompt_command {
     if [[ $VIRTUAL_ENV != "" ]]
        then
            venv=" ${BOLD}[${VIRTUAL_ENV##*/}]"
+	   
     else
        venv=''
     fi
@@ -189,8 +175,6 @@ alias msql-start='mysql.server start'
 alias msql-stop='mysql.server stop'
 alias fucking='sudo'
 alias emacs="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs -nw"
-alias vi=emacs
-alias vim=emacs
 
 #alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 #alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
