@@ -1,3 +1,4 @@
+# imports 
 if [ -f ~/.work_bash ];
 then
     source ~/.work_bash
@@ -11,7 +12,12 @@ fi
 
 
 
-# Path
+########################################
+#                                      #
+#               Exports                #
+#                                      #
+########################################
+
 export PYTHONSTARTUP="$HOME/.pythonrc"
 export PYLINTRC="$HOME/.pylintrc"
 export ANDROID_HOME="$HOME/Documents/android-sdks"
@@ -28,11 +34,10 @@ export TERM=xterm-256color
 
 ########################################
 #                                      #
-#         Django autocomplete          #
+#            Autocompleters            #
 #                                      #
 ########################################
-
-
+# Django
 _django_completion()
 {
     COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
@@ -58,7 +63,6 @@ _python_django_completion()
     fi
 }
 
-
 # Support for multiple interpreters.
 unset pythons
 if command -v whereis &>/dev/null; then
@@ -72,6 +76,24 @@ else
 fi
 
 complete -F _python_django_completion -o default $pythons
+# end django
+
+# git autocomplete
+if [ -f `brew --prefix git`/etc/bash_completion.d/git-completion.bash ]; then
+  . `brew --prefix git`/etc/bash_completion.d/git-completion.bash
+fi
+
+if [ -f `brew --prefix git`/etc/bash_completion.d/git-prompt.sh ]; then
+  . `brew --prefix git`/etc/bash_completion.d/git-prompt.sh
+fi
+# end git
+
+# bash autocomplete
+if [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+fi
+
+#end bash
 
 
 ########################################
@@ -86,21 +108,6 @@ complete -F _python_django_completion -o default $pythons
 # export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
 
 ##end
-
-
-# git autocompletion in git 2.1.x
-if [ -f `brew --prefix git`/etc/bash_completion.d/git-completion.bash ]; then
-  . `brew --prefix git`/etc/bash_completion.d/git-completion.bash
-fi
-
-if [ -f `brew --prefix git`/etc/bash_completion.d/git-prompt.sh ]; then
-  . `brew --prefix git`/etc/bash_completion.d/git-prompt.sh
-fi
-
-# bash autocompletion
-if [ -f /opt/local/etc/bash_completion ]; then
-    . /opt/local/etc/bash_completion
-fi
 
 
 
