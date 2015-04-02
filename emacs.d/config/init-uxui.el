@@ -37,6 +37,9 @@
       inhibit-startup-message t
       initial-scratch-message nil)
 
+;; I dont really like line wrapping
+(setq-default truncate-lines t)
+
 ;; use Shift+arrow_keys to move cursor around split panes
 (windmove-default-keybindings)
 
@@ -64,5 +67,15 @@
 ;; GC optimisation.
 ;; Increases garbage collection threshold to 50mb (from 0.76mb)
 (setq gc-cons-threshold 50000000)
+
+(defadvice split-window-below (after restore-balanace-below activate)
+  (balance-windows))
+
+(defadvice split-window-right (after restore-balance-right activate)
+  (balance-windows))
+
+(defadvice delete-window (after restore-balance activate)
+  (balance-windows))
+
 
 (provide 'init-uxui)
