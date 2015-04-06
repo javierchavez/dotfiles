@@ -4,7 +4,7 @@ then
     source ~/.work_bash
 fi
 
-if [ -f ~/bash_private ];
+if [ -f ~/.bash_private ];
 then
     source ~/.bash_private
 fi
