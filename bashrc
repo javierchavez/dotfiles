@@ -18,6 +18,7 @@ fi
 #                                      #
 ########################################
 
+
 export PYTHONSTARTUP="$HOME/.pythonrc"
 export PYLINTRC="$HOME/.pylintrc"
 export ANDROID_HOME="$HOME/Documents/android-sdks"

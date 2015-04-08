@@ -1,0 +1,14 @@
+import json
+import urllib
+
+
+# http://melpa.org/archive.json
+
+def install():
+    
+    _pkgs_str = urllib.urlopen("http://melpa.org/archive.json")
+    _json_obj = json.loads(_pkgs_str.read())
+
+
+
+

@@ -28,6 +28,13 @@
 (setq auto-mode-alist (cons '("\\.cxx$" . c++-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.hpp$" . c++-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.tex$" . latex-mode) auto-mode-alist))
+;; couple defaults for dotfiles
+(add-to-list 'auto-mode-alist '("bashrc" . shell-script-mode))
+(add-to-list 'auto-mode-alist '("bash_profile" . shell-script-mode))
+(add-to-list 'auto-mode-alist '("bashrc" . shell-script-mode))
+(add-to-list 'auto-mode-alist '("pylintrc" . python-mode))
+(add-to-list 'auto-mode-alist '("pythonrc" . python-mode))
+(add-to-list 'auto-mode-alist '("melpa-install" . python-mode))
 
 
 
@@ -70,15 +77,6 @@
 ;; GC optimisation.
 ;; Increases garbage collection threshold to 50mb (from 0.76mb)
 (setq gc-cons-threshold 50000000)
-
-(defadvice split-window-below (after restore-balanace-below activate)
-  (balance-windows))
-
-(defadvice split-window-right (after restore-balance-right activate)
-  (balance-windows))
-
-(defadvice delete-window (after restore-balance activate)
-  (balance-windows))
 
 
 (provide 'init-uxui)

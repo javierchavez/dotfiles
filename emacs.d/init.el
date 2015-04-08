@@ -5,6 +5,15 @@
 (require 'init-main) ;; loads 1st
 (require 'init-uxui) ;; loads 2nd
 
+
+;; To install (sucks)
+;; 1, close emacs :/
+;; 2. open terminal
+;; 3. melpa install package-name
+;; 4. open emacs :)
+
+
+
 ;; You can remove stuff you dont like.
 
 ;; SVN
