@@ -29,6 +29,7 @@ export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
 export PATH="$HOME/Library/Haskell/bin:$PATH:$ANDROID_HOME"
 export JAVA_HOME=$(/usr/libexec/java_home)
 export TERM=xterm-256color
+# export PATH="${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}"
 
 
 
