@@ -3,11 +3,9 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-	kill-region
-	undo-tree-visualize
+	kmacro-end-and-call-macro
 	))
 
 (setq mc/cmds-to-run-once
       '(
-	keyboard-escape-quit
 	))
