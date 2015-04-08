@@ -9,8 +9,12 @@
 
 ;; SVN
 (require 'init-dsvn)
+;; Python docs
+(require 'init-anaconda-mode)
 ;; News reader
 (require 'init-elfeed)
+;; Import the $PATH (only needed for GUI)
+(require 'init-exec-path)
 ;; Syntax checkers
 (require 'init-flycheck)
 (require 'init-flycheck-haskell)
@@ -36,7 +40,7 @@
 ;; paren marking
 (require 'init-mic-paren)
 ;; html and js support 
-(require 'init-multi-web-mode)
+(require 'init-web-mode)
 ;; multi cursor like sublime
 (require 'init-multiple-cursors)
 ;; file browsers on side
