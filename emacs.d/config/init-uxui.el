@@ -7,7 +7,7 @@
 (global-set-key "\C-xv" 'quoted-insert)
 (global-set-key "\C-xg" 'goto-line)
 (global-set-key "\C-xf" 'search-forward)
-(global-set-key "\C-xc" 'compile)
+;; (global-set-key "\C-xc" 'compile)
 (global-set-key "\C-xt" 'text-mode);
 (global-set-key "\C-xr" 'replace-string);
 (global-set-key "\C-xa" 'repeat-complex-command);
@@ -48,6 +48,9 @@
 (setq linum-format "%3d ")
 
 (scroll-bar-mode -1)
+
+;; auto par
+(electric-pair-mode 1)
 
 (add-hook 'shell-mode-hook 'buffer-disable-undo t)
 
