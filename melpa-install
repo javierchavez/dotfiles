@@ -5,7 +5,13 @@ import sys
 import os
 
 # http://melpa.org/archive.json
+# TODO: install specific version of package
+# TODO: m-packages.txt file read
+# TODO: melpa freeze
+# TODO: melpa uninstall, melpa install [-p file]
 
+__author__ = "Javier C"
+__email__ = "javierc@cs.unm.edu"
 
 def _download():
     pass
@@ -13,9 +19,36 @@ def _download():
 def _install():
     pass
 
+def install(argv):
+    """Install package
+    This class creates an init file containing a fucntion call that
+    emacs will call when file is loaded. Also appends package requirement 
+    to the top level init.el file
+
+    args:
+        package-name
+    """
+    
+    pass
+
+def uninstall(argv):
+    """Uninstall melpa package
+
+    args:
+        package-name
+    """
+
+    # delete the dir with corrosponding file name in /emacs.d/elpa
+    # delete the line with package name in /emacs.d/init.el
+    # remove the file with package name in /emacs.d/packages
+    pass
 
 def main(argv):
-
+    """Entry point
+    
+    refactor to: 
+        Call uninstall or install depending on arg 
+    """
     _err = ""
 
 
