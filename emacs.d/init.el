@@ -6,11 +6,22 @@
 (require 'init-uxui) ;; loads 2nd
 
 
-;; To install (sucks)
-;; 1, close emacs :/
-;; 2. open terminal
-;; 3. melpa install package-name
-;; 4. open emacs :)
+;;;;;;;;;;;;;;;;;;;;;; scheme ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq scheme-program-name "racket") 
+
+
+;;;;; REMOTE cs
+(defun unm-connect-remote ()
+  (interactive)
+  (dired "/ssh:javierc@moons.cs.unm.edu:/nfs/student/j/javierc/Documents/"))
+
+
+
+(defun open-finder ()
+  (interactive)
+  (shell-command "open ."))
+
+
 
 
 
@@ -62,21 +73,4 @@
 (require 'init-undo-tree)
 ;; python venv
 (require 'init-virtualenvwrapper)
-
-
-;;;;;;;;;;;;;;;;;;;;;; scheme ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq scheme-program-name "racket") 
-
-
-;;;;; REMOTE cs
-(defun unm-connect-remote ()
-  (interactive)
-  (dired "/ssh:javierc@moons.cs.unm.edu:/nfs/student/j/javierc/Documents/"))
-
-
-
-(defun open-finder ()
-  (interactive)
-  (shell-command "open ."))
-
 

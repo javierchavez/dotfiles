@@ -1,14 +1,74 @@
 import json
 import urllib
-
+import getopt
+import sys
+import os
 
 # http://melpa.org/archive.json
 
-def install():
-    
+
+def _download():
+    pass
+
+def _install():
+    pass
+
+
+def main(argv):
+
+    _err = ""
+
+
+    _pkg_name = sys.argv[1]
     _pkgs_str = urllib.urlopen("http://melpa.org/archive.json")
     _json_obj = json.loads(_pkgs_str.read())
 
+    # cache needs to be impl 
+    # try:
+    #     fh = open("testfile", "w")
+    #     fh.write("This is my test file for exception handling!!")
+    # except IOError:
+    #     print "Error: can\'t find file or read data"
+    # else:
+    #     print "Written content in the file successfully"
+    #     fh.close()
+        
+    if _pkg_name in _json_obj:
+        cur_path = os.path.dirname(os.path.realpath(__file__))
+        emacs_pkg_path = os.path.join(cur_path,"emacs.d", "packages")
+        file_name = "init-"+_pkg_name+".el"
+        path_to_file = os.path.join(emacs_pkg_path, file_name)
+        
+        if os.path.isfile(path_to_file):
+            ans = raw_input("Overwrite? y or n: ")
+            if 'n' in ans:
+                sys.exit(1)
+        
+        path_to_init = os.path.join(cur_path, "emacs.d") + "/init.el"
+        
+        with open(path_to_file,"w") as f:
+            f.write("(require-package '%s)\n\n" % _pkg_name)
+            f.write(";; Package config ;; \n\n")
+            f.write("(provide 'init-%s)" % _pkg_name)
 
+        with open(path_to_init, "a") as i:
+            i.write(";; require %s\n"% _pkg_name)
+            i.write("(require 'init-%s)\n" % _pkg_name)
+
+        print("Restart emacs...")
+        del _json_obj
+        
+    else:
+        print(sys.argv[1] + " was not found")
+
+    return
+
+        
+if __name__ == "__main__":
+    if len(sys.argv) == 0:
+        print("Please supply a package name.")
+        sys.exit(1)
+    
+    main(sys.argv[1:])
 
 
