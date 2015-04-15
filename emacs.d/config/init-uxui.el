@@ -1,5 +1,14 @@
-(require-package 'monokai-theme)
-(load-theme 'monokai t)
+;;(require-package 'monokai-theme)
+;;(load-theme 'monokai t)
+
+;;(require-package 'flatui-theme)
+;;(load-theme 'flatui )
+
+(require-package 'ample-theme)
+
+(load-theme 'ample t)
+(enable-theme 'ample)
+
 
 (global-font-lock-mode t)
 (global-set-key "\C-x\C-k" 'kill-buffer-and-window)
@@ -36,7 +45,7 @@
 (add-to-list 'auto-mode-alist '("pythonrc" . python-mode))
 (add-to-list 'auto-mode-alist '("melpa-install" . python-mode))
 
-
+(menu-bar-mode -1)
 
 (setq visible-bell nil
       ring-bell-function 'ignore
