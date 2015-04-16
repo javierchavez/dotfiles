@@ -4,10 +4,10 @@
 ;;(require-package 'flatui-theme)
 ;;(load-theme 'flatui )
 
-(require-package 'ample-theme)
+;; (require-package 'ample-theme)
 
-(load-theme 'ample t)
-(enable-theme 'ample)
+(load-theme 'smyx t)
+;; (enable-theme 'ample)
 
 
 (global-font-lock-mode t)

@@ -67,6 +67,11 @@ def main(argv):
     #     fh.close()
         
     if _pkg_name in _json_obj:
+        ans = raw_input("Are you sure install %s y or n: " % _pkg_name)
+        if 'n' in ans:
+            sys.exit(1)
+        
+
         cur_path = os.path.dirname(os.path.realpath(__file__))
         emacs_pkg_path = os.path.join(cur_path,"emacs.d", "packages")
         file_name = "init-"+_pkg_name+".el"

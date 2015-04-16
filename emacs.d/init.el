@@ -74,3 +74,7 @@
 ;; python venv
 (require 'init-virtualenvwrapper)
 
+
+;; require python-mode
+(require 'init-python-mode)
+
