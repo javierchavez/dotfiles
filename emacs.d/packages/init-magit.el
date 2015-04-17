@@ -1,1 +1,5 @@
-(require-package 'magit) (provide 'init-magit)
+(require-package 'magit)
+
+(setq magit-auto-revert-mode nil)
+
+(provide 'init-magit)
