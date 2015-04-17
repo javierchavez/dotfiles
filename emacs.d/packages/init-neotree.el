@@ -2,7 +2,8 @@
 
 
 (custom-set-faces
- '(neo-file-link-face ((t :inherit default)))
+ '(neo-button-face ((t (:foreground "cyan" :underline nil))))
+ '(neo-file-link-face ((t (:foreground "yellow"))))
  '(neo-header-face ((t :inherit shadow)))
  '(neo-root-dir-face ((t :inherit link-visited :underline nil))))
 
@@ -15,10 +16,9 @@
 ;; use f to open with finder
 (eval-after-load 'neotree
                  '(progn
-                   ;; prevent global keysettings being overwritten
-                   (define-key neotree-mode-map (kbd "f") 'open-finder)
-                   
-                         ))
+		    ;; prevent global keysettings being overwritten
+		    (define-key neotree-mode-map (kbd "f") 'open-finder)
+		   ))
 (setq neo-smart-open t)
 (neotree-toggle)
 

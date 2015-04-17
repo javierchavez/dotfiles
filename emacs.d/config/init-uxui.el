@@ -1,3 +1,7 @@
+;; If emacs is running in GUI
+;;(if (display-graphic-p)    
+;;    )
+
 ;;(require-package 'monokai-theme)
 ;;(load-theme 'monokai t)
 
@@ -5,10 +9,8 @@
 ;;(load-theme 'flatui )
 
 ;; (require-package 'ample-theme)
-
-(load-theme 'smyx t)
 ;; (enable-theme 'ample)
-
+(load-theme 'smyx t)
 
 (global-font-lock-mode t)
 (global-set-key "\C-x\C-k" 'kill-buffer-and-window)
@@ -60,8 +62,12 @@
 (windmove-default-keybindings)
 
 ;; only show linum when programming
-(add-hook 'prog-mode-hook 'linum-mode)
-(setq linum-format "%3d ")
+(when (display-graphic-p)
+  ;; only show linum when programming
+  (setq linum-format "%3d ")
+  (add-hook 'prog-mode-hook 'linum-mode))
+
+
 
 (scroll-bar-mode -1)
 

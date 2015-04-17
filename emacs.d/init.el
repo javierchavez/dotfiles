@@ -22,9 +22,6 @@
   (shell-command "open ."))
 
 
-
-
-
 ;; You can remove stuff you dont like.
 
 ;; SVN
@@ -77,4 +74,7 @@
 
 ;; require python-mode
 (require 'init-python-mode)
+
+;; require git-gutter-fringe
+(require 'init-git-gutter-fringe)
 
