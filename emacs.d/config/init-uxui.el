@@ -57,6 +57,8 @@
 
 ;; I dont really like line wrapping
 (setq-default truncate-lines t)
+;; no tabs
+(setq-default indent-tabs-mode nil)
 
 ;; use Shift+arrow_keys to move cursor around split panes
 (windmove-default-keybindings)
