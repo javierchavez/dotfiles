@@ -78,3 +78,5 @@
 ;; require git-gutter-fringe
 (require 'init-git-gutter-fringe)
 
+;; require pylint
+(require 'init-pylint)
