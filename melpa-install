@@ -3,7 +3,7 @@ import urllib
 import getopt
 import sys
 import os
-
+import logging
 # http://melpa.org/archive.json
 # TODO: install specific version of package
 # TODO: m-packages.txt file read
@@ -12,6 +12,8 @@ import os
 
 __author__ = "Javier C"
 __email__ = "javierc@cs.unm.edu"
+
+"""As of right now this cannot be ran with a virtural env"""
 
 def _download():
     pass
@@ -103,8 +105,9 @@ def main(argv):
 
         
 if __name__ == "__main__":
+    
     if len(sys.argv) == 0:
-        print("Please supply a package name.")
+        logging.error("Please supply a package name.")
         sys.exit(1)
     
     main(sys.argv[1:])
