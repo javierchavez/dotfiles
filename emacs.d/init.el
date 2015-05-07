@@ -75,8 +75,8 @@
 ;; require python-mode
 (require 'init-python-mode)
 
-;; require git-gutter-fringe
-(require 'init-git-gutter-fringe)
 
 ;; require pylint
 (require 'init-pylint)
+;; require color-theme-approximate
+(require 'init-color-theme-approximate)

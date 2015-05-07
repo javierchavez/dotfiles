@@ -2,15 +2,18 @@
 ;;(if (display-graphic-p)    
 ;;    )
 
-;;(require-package 'monokai-theme)
-;;(load-theme 'monokai t)
+;; (require-package 'monokai-theme)
+;; (load-theme 'monokai t)
 
 ;;(require-package 'flatui-theme)
 ;;(load-theme 'flatui )
 
 ;; (require-package 'ample-theme)
 ;; (enable-theme 'ample)
-(load-theme 'smyx t)
+;; (load-theme 'smyx t)
+
+;; (load-theme 'sanityinc-tomorrow-night t)
+(load-theme 'sanityinc-tomorrow-eighties t)
 
 (global-font-lock-mode t)
 (global-set-key "\C-x\C-k" 'kill-buffer-and-window)
@@ -64,12 +67,20 @@
 (windmove-default-keybindings)
 
 ;; only show linum when programming
-(when (display-graphic-p)
-  ;; only show linum when programming
-  (setq linum-format "%3d ")
-  (add-hook 'prog-mode-hook 'linum-mode))
+;; (when (display-graphic-p)
+;;   ;; only show linum when programming
+;;   (setq linum-format "%3d ")
+;;   (add-hook 'prog-mode-hook 'linum-mode))
 
 
+(add-hook 'prog-mode-hook 'linum-mode)
+(defadvice linum-update-window (around linum-dynamic activate)
+  (let* ((w (length (number-to-string
+                     (count-lines (point-min) (point-max)))))
+         (linum-format (concat " %" (number-to-string w) "d ")))
+    ad-do-it))
+
+(global-hl-line-mode 1)
 
 (scroll-bar-mode -1)
 
