@@ -3,8 +3,9 @@
 
 (custom-set-faces
  '(neo-button-face ((t (:foreground "cyan" :underline nil))))
- '(neo-file-link-face ((t (:foreground "yellow"))))
  '(neo-header-face ((t :inherit shadow)))
+ '(neo-dir-link-face ((t (:foreground "SeaGreen2" :weight light))))
+ '(neo-file-link-face ((t (:foreground "yellow"))))
  '(neo-root-dir-face ((t :inherit link-visited :underline nil))))
 
 
