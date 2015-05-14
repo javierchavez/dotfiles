@@ -14,4 +14,10 @@
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-indent-style 2)
 
+
+;; (custom-set-faces
+;;  '(web-mode-html-tag-bracket-face ((t (:foreground "SteelBlue1"))))
+;;  '(web-mode-html-tag-face ((t (:foreground "DarkOrange1")))))
+
+
 (provide 'init-web-mode)
