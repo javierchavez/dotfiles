@@ -31,9 +31,8 @@ Make sure you set location in `packages/init-virtualenvwrapper.el`
 
 ######Noteable features
 * smart-tab (autocomplete)
-* multiple-cursors (C-c C-l like sublime)
+* multiple-cursors (C-x C-l like sublime)
 * shell (C-x C-u)
-* monoaki-theme
 * kill-buffer-and-window (C-x C-k)
 
 
@@ -74,6 +73,11 @@ brew install git bash-completion
 
 #python
 I include a pythonrc and pylintrc file for a better python experience.
+I love this command
+```python
+python -m SimpleHTTPServer
+python3 -m http.server
+```
 
 ######pythonrc
 Call `source(object)` to get the source/more info about the object
@@ -125,9 +129,3 @@ from [@Nuk9](https://github.com/Nuk9)
 
 `osx.sh` hotcorners from
 [@holman](https://github.com/holman/dotfiles)!
-
-
-
-
-
-

@@ -185,6 +185,7 @@ alias msql-stop='mysql.server stop'
 alias fucking='sudo'
 alias emacs="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs -nw"
 alias melpa-install="python .melpa-install"
+alias simpleserver="python -m SimpleHTTPServer 8081"
 #alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 #alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
