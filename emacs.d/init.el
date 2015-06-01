@@ -14,6 +14,9 @@
 (defun unm-connect-remote ()
   (interactive)
   (dired "/ssh:javierc@moons.cs.unm.edu:/nfs/student/j/javierc/Documents/"))
+(defun javierachavez ()
+  (interactive)
+  (dired "/ssh:javierac@javierachavez.com:/home2/javierac"))
 
 
 
