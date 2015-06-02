@@ -156,7 +156,7 @@ function prompt_command {
       dirty="${RED}*${OFF}"
     fi
 
-    prompt="${CYAN}${time}${OFF} ${BLUE}\w${OFF}${PURPLE}${branch}${OFF}${dirty}${venv}"
+    prompt="${CYAN}(\h)${time}${OFF} ${BLUE}\w${OFF}${PURPLE}${branch}${OFF}${dirty}${venv}"
 
     if [ ${exitstatus} -eq 0 ]; then
        PS1="${prompt} ${GREEN}\\$ ${OFF}"

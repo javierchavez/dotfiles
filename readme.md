@@ -46,70 +46,19 @@ ANDROID_HOME
 ```
 
 #Brew
-Brew will be installed if you dont have it. **Strongly** recommend
-installing.
+Brew will be installed if you dont have it.
 
-```bash
-brew install emacs --coca
-ln -s /usr/local/Cellar/emacs/{build}/Emacs.app /Applications
-# override system default emacs
-alias emacs="/usr/local/Cellar/emacs/{build}/Emacs.app/Contents/MacOS/Emacs -nw"
-```
-
-and...
 
 ```bash
 brew install git bash-completion
 ```
 
-######Scheme/Haskell
+######Stuff to install 
 
 * `brew cask install racket`
 * `brew cask install haskell-platform`
+* `brew install gradle maven ssh-copy-id webp wget`
 
-######Other
-
-`brew install gradle maven ssh-copy-id webp wget`
-
-#python
-I include a pythonrc and pylintrc file for a better python experience.
-I love this command
-```python
-python -m SimpleHTTPServer
-python3 -m http.server
-```
-
-######pythonrc
-Call `source(object)` to get the source/more info about the object
-
-
-#etc
-Here are some other notes about the dotfiles.
-
-###How `emacs.d/packages/` was made
-
-First i M-x package-list and copied all the installed packages and
-saved it to emacs_packages.txt.
-
-Then while inside of the packages dir I ran...
-
-```bash
-while read line; do echo "(require-package '${line}) (provide 'init-${line})"> "init-${line}.el" ; done < ../emacs_packages.txt
-```
-
-**This needs to be refactored into a actual script** 
-
-- [ ]	Script to generate already populated files
-- [ ]	Script to add/remove packages 
-- [ ]	install.sh that encompasses everything 
-
-
-Each file contains cofig for givin package.
-
-
-###How `emacs.d/config` was made
-
-Simply over time configuring emacs.
 
 ###What is `init.el`
 I am requiring all the packages if the package is not installed then I

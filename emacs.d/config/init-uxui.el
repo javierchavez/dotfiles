@@ -13,6 +13,7 @@
 ;; (load-theme 'smyx t)
 
 ;; (load-theme 'sanityinc-tomorrow-night t)
+(require-package 'color-theme-sanityinc-tomorrow)
 (load-theme 'sanityinc-tomorrow-eighties t)
 
 (global-font-lock-mode t)

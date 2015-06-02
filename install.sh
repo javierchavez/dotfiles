@@ -18,8 +18,11 @@ if test ! $(which brew)
 then
   echo "  Installing Homebrew for you."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  echo " Installing Cask for you."
+  echo "  Installing Cask for you."
   brew install caskroom/cask/brew-cask
+  echo "  Installing emacs."
+  brew install emacs --HEAD --cocoa
+  ln -s /usr/local/Cellar/emacs/HEAD/Emacs.app /Applications
 fi
 
 # Install homebrew packages
