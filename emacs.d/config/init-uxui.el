@@ -80,10 +80,13 @@
                      (count-lines (point-min) (point-max)))))
          (linum-format (concat " %" (number-to-string w) "d ")))
     ad-do-it))
-
+;;
 (global-hl-line-mode 1)
-
+;;
 (scroll-bar-mode -1)
+
+;;
+(setq-default tab-width 4)
 
 ;; auto par
 (electric-pair-mode 1)
