@@ -51,7 +51,7 @@ for file in $files; do
 done
 
 echo "Creating history files for python."
-mkdir $dir/.history
-touch $dir/.history/python
+mkdir $HOME/.history
+touch $HOME/.history/python
 
 

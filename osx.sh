@@ -24,4 +24,4 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Set key repeat.
 defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 1
-
+defaults write -g ApplePressAndHoldEnabled -bool false
