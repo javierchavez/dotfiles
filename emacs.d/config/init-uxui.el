@@ -106,6 +106,21 @@
                          "%b"))))
 
 
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "|" "DONE(d)" "CANCELLED(c)")
+        (sequence "TASK(f)" "|" "DONE(d)")
+        (sequence "MAYBE(m)" "|" "CANCELLED(c)")))
+
+(setq org-todo-keyword-faces
+      '(("TODO" . (:foreground "DarkOrange1" :weight bold))
+        ("MAYBE" . (:foreground "sea green"))
+        ("DONE" . (:foreground "light sea green"))
+        ("CANCELLED" . (:foreground "forest green"))
+        ("TASK" . (:foreground "blue"))))
+
+(setq org-log-done t)
+
+
 ;; GC optimisation.
 ;; Increases garbage collection threshold to 50mb (from 0.76mb)
 (setq gc-cons-threshold 50000000)
