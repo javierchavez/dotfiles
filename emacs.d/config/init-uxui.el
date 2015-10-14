@@ -13,8 +13,7 @@
 ;; (load-theme 'smyx t)
 
 ;; (load-theme 'sanityinc-tomorrow-night t)
-(require-package 'color-theme-sanityinc-tomorrow)
-(load-theme 'sanityinc-tomorrow-eighties t)
+(require 'init-theme)
 
 (global-font-lock-mode t)
 (global-set-key "\C-x\C-k" 'kill-buffer-and-window)
