@@ -1,10 +1,22 @@
 #Install
 
+######Notice
+Your old files will be in `~/dotfiles_old`
+
+###Clone
 ```bash
 git clone git://github.com/javierchavez/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
+```
+
+###Add execute permission
+```bash
 chmod +x install.sh
 chmod +x osx.sh
+```
+
+###Install
+```bash
 ./install.sh
 ./osx.sh
 ```
@@ -12,7 +24,20 @@ chmod +x osx.sh
 **Restart Terminal**
 
 
-Once ran your old files will be in `~/dotfiles_old`
+#Contributing
+
+1.    fork
+2.    create your branch
+3.    fix
+4.    send me a merge request
+
+Why do it this way?
+*     I don't add a unecessiarily large number of branches in my repo.
+*     You can request only the changes you want to be merged per
+      branch then move back into your customized repo.
+*     More documentation and history of events are logged as a result
+      of a merge request.
+
 
 #Set up emacs
 
@@ -62,7 +87,7 @@ brew install git bash-completion
 
 ###What is `init.el`
 I am requiring all the packages if the package is not installed then I
-install it.
+install it. Makes setting up emacs hassel free.
 
 
 **Credits**
