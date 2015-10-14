@@ -9,15 +9,27 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-(setq web-mode-markup-indent-offset 4)
-(setq web-mode-css-indent-offset 4)
-(setq web-mode-code-indent-offset 4)
-(setq web-mode-indent-style 4)
+(setq web-mode-engines-alist
+      '(("django" . "\\.html\\'")))
+
+
+(defun custom-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-code-indent-offset 4)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-enable-engine-detection t)
+  (setq web-mode-enable-current-element-highlight t)
+  ;; (setq web-mode-extra-snippets
+  ;;     '(("django" . (("a" . ("{% " . " %}"))
+  ;;                    ("%" . ("{% " . " %}"))))))
+  )
 
 
 ;; (custom-set-faces
 ;;  '(web-mode-html-tag-bracket-face ((t (:foreground "SteelBlue1"))))
 ;;  '(web-mode-html-tag-face ((t (:foreground "DarkOrange1")))))
 
+(add-hook 'web-mode-hook 'custom-web-mode-hook)
 
 (provide 'init-web-mode)

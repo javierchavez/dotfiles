@@ -1,4 +1,4 @@
-# imports 
+# imports
 if [ -f ~/.work_bash ];
 then
     source ~/.work_bash
@@ -22,6 +22,7 @@ fi
 export PYTHONSTARTUP="$HOME/.pythonrc"
 export PYLINTRC="$HOME/.pylintrc"
 export ANDROID_HOME="$HOME/Documents/android-sdks"
+# export PATH="$HOME/Documents/jME3-sdk"
 export PATH=/Library/Frameworks/UnixImageIO.framework/Programs:$PATH
 export PATH=/Library/Frameworks/PROJ.framework/Programs:$PATH
 export PATH=/Library/Frameworks/GEOS.framework/Programs:$PATH
@@ -36,7 +37,7 @@ export TERM=xterm-256color
 
 ########################################
 #                                      #
-#            Autocompleters            #
+#    Autocomplete - python & django    #
 #                                      #
 ########################################
 # Django
@@ -83,13 +84,14 @@ export TERM=xterm-256color
 
 
 
-
-# git autocomplete
-# removed prefix
+########################################
+#                                      #
+#          Autocomplete git            #
+#                                      #
+########################################
 if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
     . /usr/local/etc/bash_completion.d/git-completion.bash
 fi
-#end bash
 
 
 ########################################
@@ -98,7 +100,7 @@ fi
 #                                      #
 ########################################
 
-# Show branch in status line 
+# Show branch in status line
 
 # PS1='[\W$(__git_ps1 " (%s)")]\$ '
 # export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
@@ -123,13 +125,13 @@ function prompt_command {
     OFF="\[\033[m\]"
 
     time=`date +"%H:%M"`
-    
+
 
     # Virtual Env
     if [[ $VIRTUAL_ENV != "" ]]
        then
            venv=" ${BOLD}[${VIRTUAL_ENV##*/}]"
-	   
+
     else
        venv=''
     fi
@@ -164,6 +166,10 @@ function prompt_command {
 # comment this out if you dont like
 PROMPT_COMMAND="prompt_command; $PROMPT_COMMAND"
 
+# start tmux on every login
+# if command -v tmux>/dev/null; then
+#   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+# fi
 
 
 ########################################
@@ -184,8 +190,10 @@ alias simpleserver="python -m SimpleHTTPServer 8081"
 #alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+########################################
+#                                      #
+#                 Ruby                 #
+#                                      #
+########################################
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi

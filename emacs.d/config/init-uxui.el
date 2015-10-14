@@ -22,7 +22,12 @@
 (global-set-key "\C-xv" 'quoted-insert)
 (global-set-key "\C-xg" 'goto-line)
 (global-set-key "\C-xf" 'search-forward)
-;; (global-set-key "\C-xc" 'compile)
+;; (global-set-key "\C-x\C-c" 'compile)
+;; (define-key java-mode (kbd "C-c C-c") 'compile)
+(defun on-java-loaded ()
+  (define-key java-mode-map (kbd "C-c C-c") 'compile))
+(add-hook 'java-mode-hook 'on-java-loaded)
+
 (global-set-key "\C-xt" 'text-mode);
 (global-set-key "\C-xr" 'replace-string);
 (global-set-key "\C-xa" 'repeat-complex-command);
