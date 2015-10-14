@@ -54,4 +54,8 @@ echo "Creating history files for python."
 mkdir $HOME/.history
 touch $HOME/.history/python
 
+if [[ `uname` == 'Darwin' ]]; then
+    rm -f "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+    ln -s $dir/Preferences.sublime-settings "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+fi
 
