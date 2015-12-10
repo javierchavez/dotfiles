@@ -23,7 +23,12 @@
 (global-set-key "\C-xf" 'search-forward)
 ;; (global-set-key "\C-x\C-c" 'compile)
 ;; (define-key java-mode (kbd "C-c C-c") 'compile)
+(setq c-default-style "bsd"
+      c-basic-offset 4)
 (defun on-java-loaded ()
+  (setq c-basic-offset 2
+        tab-width 2
+        indent-tabs-mode nil)
   (define-key java-mode-map (kbd "C-c C-c") 'compile))
 (add-hook 'java-mode-hook 'on-java-loaded)
 
