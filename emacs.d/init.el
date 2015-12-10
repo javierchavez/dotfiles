@@ -47,7 +47,7 @@
 (require 'init-flycheck-haskell)
 (require 'init-flymake-easy)
 (require 'init-flymake-jslint)
-(require 'init-flymake-ruby)
+;; (require 'init-flymake-ruby)
 (require 'init-haskell-mode)
 ;; haskell indent
 (require 'init-hi2)
@@ -90,3 +90,8 @@
 (require 'init-pylint)
 ;; require color-theme-approximate
 (require 'init-color-theme-approximate)
+
+;; require yaml-mode
+(require 'init-yaml-mode)
+;; require robe
+(require 'init-robe)
