@@ -3,6 +3,7 @@
 [user]
         name = Javier C
         email = youracow@gmail.com
+	signingkey = 16E22091
 [credential]
         helper = GIT_CREDENTIAL_HELPER
 
