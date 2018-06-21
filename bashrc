@@ -123,7 +123,8 @@ delete () {
     if [ -f $1 ] ; then
         shred -vzun 3 $1
     else
-        echo "'$1' is not a valid file"
+        find $1 -type f -exec shred -vzun 3 {} \;
+        rm -rf $1
     fi
 }
 
