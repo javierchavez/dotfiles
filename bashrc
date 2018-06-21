@@ -116,15 +116,26 @@ PROMPT_COMMAND="prompt_command; $PROMPT_COMMAND"
 
 ########################################
 #                                      #
+#               Delete                 #
+#                                      #
+########################################
+delete () {
+    if [ -f $1 ] ; then
+        shred -vzun 3 $1
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+
+########################################
+#                                      #
 #               Alias                  #
 #                                      #
 ########################################
 alias hidden="ls -a | grep '^\.'"
 alias unm='ssh javierc@moons.cs.unm.edu'
-alias msql-start='mysql.server start'
-alias msql-stop='mysql.server stop'
 alias fucking='sudo'
-alias melpa-install="python .melpa-install"
 alias simpleserver="python -m SimpleHTTPServer 8081"
 #alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 #alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'

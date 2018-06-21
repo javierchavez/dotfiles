@@ -4,11 +4,13 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/.dotfiles
 ############################
 
-########## Variables
-
-dir=~/.dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files="tmux.conf bash_profile bashrc emacs.d gitconfig gitignore"    # list of files/folders to symlink in homedir
+####### Variables ########
+# dotfiles directory
+dir=~/.dotfiles
+# old dotfiles backup directory
+olddir=~/dotfiles_old
+# list of files/folders to symlink in homedir
+files="tmux.conf bash_profile bashrc emacs.d gitconfig gitignore"    
 
 
 # create dotfiles_old in homedir
@@ -26,10 +28,8 @@ echo "...done"
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
+    # mv silent
+    mv ~/.$file ~/dotfiles_old/ 2>/dev/null
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
-
-mv ~/tmux.conf ~/dotfiles_old/
-ln -s $dir/tmux.conf ~/tmux.conf
