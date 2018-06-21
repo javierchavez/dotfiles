@@ -1,21 +1,21 @@
-#Install
+# Install
 
-######Notice
+###### Notice
 Your old files will be in `~/dotfiles_old`
 
-###Clone
+### Clone
 ```bash
 git clone git://github.com/javierchavez/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ```
 
-###Add execute permission
+### Add execute permission
 ```bash
 chmod +x install.sh
 chmod +x osx.sh
 ```
 
-###Install
+### Install
 ```bash
 ./install.sh
 ./osx.sh
@@ -24,12 +24,12 @@ chmod +x osx.sh
 **Restart Terminal**
 
 
-#Contributing
+# Contributing
 
-1.    fork
-2.    create your branch
-3.    fix
-4.    send me a merge request
+1. fork
+2. create your branch
+3. fix
+4. send me a merge request
 
 Why do it this way?
 *     I don't add a unecessiarily large number of branches in my repo.
@@ -39,11 +39,11 @@ Why do it this way?
       of a merge request.
 
 
-#Set up emacs
+# Set up emacs
 
-1.    Open emacs.
-2.    Wait until install is complete
-3.    Close and reopen.
+1. Open emacs.
+2. Wait until install is complete
+3. Close and reopen.
 
 You can easily delete packages you dont want loaded... just delete the
 require in `emacs/init.el` e.g. delete (require
@@ -54,14 +54,14 @@ Make sure you set location in `packages/init-virtualenvwrapper.el`
 (setq venv-location "/Users/javierc/Documents/virtualenvs/")
 ```
 
-######Noteable features
+###### Noteable features
 * smart-tab (autocomplete)
 * multiple-cursors (C-x C-l like sublime)
 * shell (C-x C-u)
 * kill-buffer-and-window (C-x C-k)
 
 
-#About bash
+# About bash
 I am using bashrc as main so that emacs references it in shell.
 
 Make sure you set or delete `PATH`s that are giving you trouble
@@ -70,22 +70,14 @@ e.g.
 ANDROID_HOME
 ```
 
-#Brew
-Brew will be installed if you dont have it.
-
-
-```bash
-brew install git bash-completion
-```
-
-######Stuff to install 
+###### Stuff to install 
 
 * `brew cask install racket`
 * `brew cask install haskell-platform`
 * `brew install gradle maven ssh-copy-id webp wget`
 
 
-###What is `init.el`
+### What is `init.el`
 I am requiring all the packages if the package is not installed then I
 install it. Makes setting up emacs hassel free.
 
