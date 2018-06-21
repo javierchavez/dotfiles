@@ -19,67 +19,9 @@ fi
 ########################################
 
 
-export PYTHONSTARTUP="$HOME/.pythonrc"
-export PYLINTRC="$HOME/.pylintrc"
-export ANDROID_HOME="$HOME/Documents/android-sdks"
+# export ANDROID_HOME="$HOME/Documents/android-sdks"
 # export PATH="$HOME/Documents/jME3-sdk"
-export PATH=/Library/Frameworks/UnixImageIO.framework/Programs:$PATH
-export PATH=/Library/Frameworks/PROJ.framework/Programs:$PATH
-export PATH=/Library/Frameworks/GEOS.framework/Programs:$PATH
-export PATH=/Library/Frameworks/SQLite3.framework/Programs:$PATH
-export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
-export PATH="$HOME/Library/Haskell/bin:$PATH:$ANDROID_HOME"
-export JAVA_HOME=$(/usr/libexec/java_home)
-export TERM=xterm-256color
 # export PATH="${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}"
-
-
-
-########################################
-#                                      #
-#    Autocomplete - python & django    #
-#                                      #
-########################################
-# Django
-# _django_completion()
-# {
-#     COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
-#                    COMP_CWORD=$COMP_CWORD \
-#                    DJANGO_AUTO_COMPLETE=1 $1 ) )
-# }
-# complete -F _django_completion -o default django-admin.py manage.py django-admin
-
-# _python_django_completion()
-# {
-#     if [[ ${COMP_CWORD} -ge 2 ]]; then
-#         PYTHON_EXE=${COMP_WORDS[0]##*/}
-#         echo $PYTHON_EXE | egrep "python([2-9]\.[0-9])?" >/dev/null 2>&1
-#         if [[ $? == 0 ]]; then
-#             PYTHON_SCRIPT=${COMP_WORDS[1]##*/}
-#             echo $PYTHON_SCRIPT | egrep "manage\.py|django-admin(\.py)?" >/dev/null 2>&1
-#             if [[ $? == 0 ]]; then
-#                 COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]:1}" \
-#                                COMP_CWORD=$(( COMP_CWORD-1 )) \
-#                                DJANGO_AUTO_COMPLETE=1 ${COMP_WORDS[*]} ) )
-#             fi
-#         fi
-#     fi
-# }
-
-# # Support for multiple interpreters.
-# unset pythons
-# if command -v whereis &>/dev/null; then
-#     python_interpreters=$(whereis python | cut -d " " -f 2-)
-#     for python in $python_interpreters; do
-#         pythons="${pythons} ${python##*/}"
-#     done
-#     pythons=$(echo $pythons | tr " " "\n" | sort -u | tr "\n" " ")
-# else
-#     pythons=python
-# fi
-
-# complete -F _python_django_completion -o default $pythons
-# end django
 
 
 
@@ -89,9 +31,9 @@ export TERM=xterm-256color
 #          Autocomplete git            #
 #                                      #
 ########################################
-if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-    . /usr/local/etc/bash_completion.d/git-completion.bash
-fi
+# if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+#     . /usr/local/etc/bash_completion.d/git-completion.bash
+# fi
 
 
 ########################################
@@ -179,23 +121,10 @@ PROMPT_COMMAND="prompt_command; $PROMPT_COMMAND"
 ########################################
 alias hidden="ls -a | grep '^\.'"
 alias unm='ssh javierc@moons.cs.unm.edu'
-alias jac='ssh javierac@javierachavez.com'
 alias msql-start='mysql.server start'
 alias msql-stop='mysql.server stop'
 alias fucking='sudo'
-alias emacs="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs -nw"
 alias melpa-install="python .melpa-install"
 alias simpleserver="python -m SimpleHTTPServer 8081"
 #alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 #alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-
-
-########################################
-#                                      #
-#                 Ruby                 #
-#                                      #
-########################################
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
