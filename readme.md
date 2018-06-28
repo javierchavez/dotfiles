@@ -31,15 +31,15 @@ chmod +x install.sh
 4. send me a merge request
 
 Why do it this way?
-*     I don't add a unecessiarily large number of branches in my repo.
-*     You can request only the changes you want to be merged per
-      branch then move back into your customized repo.
-*     More documentation and history of events are logged as a result
-      of a merge request.
+* I don't add a unecessiarily large number of branches in my repo.
+* You can request only the changes you want to be merged per
+  branch then move back into your customized repo.
+* More documentation and history of events are logged as a result
+  of a merge request.
 
 
 
-### What is `emacs.d/init.el`
+### What is [init.el](/emacs.d/init.el)
 I am requiring all the packages if the package is not installed then I
 install it. Makes setting up emacs hassel free.
 
