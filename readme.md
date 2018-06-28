@@ -1,5 +1,7 @@
 # Install
 
+This is an env that I use for Pop_OS! 18.04 
+
 ###### Notice
 Your old files will be in `~/dotfiles_old`
 
@@ -9,18 +11,15 @@ git clone git://github.com/javierchavez/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ```
 
-### Add execute permission
-```bash
-chmod +x install.sh
-chmod +x osx.sh
-```
-
 ### Install
 ```bash
 ./install.sh
-./osx.sh
 ```
 
+If you get permission **Error**, add execute permission
+```bash
+chmod +x install.sh
+```
 **Restart Terminal**
 
 
@@ -39,45 +38,8 @@ Why do it this way?
       of a merge request.
 
 
-# Set up emacs
 
-1. Open emacs.
-2. Wait until install is complete
-3. Close and reopen.
-
-You can easily delete packages you dont want loaded... just delete the
-require in `emacs/init.el` e.g. delete (require
-'init-virtualenvwrapper) if you dont want it.
-
-Make sure you set location in `packages/init-virtualenvwrapper.el`
-```lisp
-(setq venv-location "/Users/javierc/Documents/virtualenvs/")
-```
-
-###### Noteable features
-* smart-tab (autocomplete)
-* multiple-cursors (C-x C-l like sublime)
-* shell (C-x C-u)
-* kill-buffer-and-window (C-x C-k)
-
-
-# About bash
-I am using bashrc as main so that emacs references it in shell.
-
-Make sure you set or delete `PATH`s that are giving you trouble
-e.g.
-```bash
-ANDROID_HOME
-```
-
-###### Stuff to install 
-
-* `brew cask install racket`
-* `brew cask install haskell-platform`
-* `brew install gradle maven ssh-copy-id webp wget`
-
-
-### What is `init.el`
+### What is `emacs.d/init.el`
 I am requiring all the packages if the package is not installed then I
 install it. Makes setting up emacs hassel free.
 
